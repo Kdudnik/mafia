@@ -3,10 +3,10 @@
 </script>
 
 <template>
-    <header class="absolute flex justify-center h-20 w-full bg-gray-dark shadow-navbar">
+    <header class="fixed flex justify-center h-20 w-full bg-gray-dark shadow-navbar">
         <nav class="container flex grow items-center justify-between py-3">
             <a href="#" class="basis-16 hover:scale-110 duration-200">
-                <img src="../../public/images/navbar/logo.png" alt="">
+                <img src="../../images/navbar/logo.png" alt="">
             </a>
             <ul class="flex gap-8 text-lg font-semibold">
                 <a class="group flex flex-wrap relative" href="#">
