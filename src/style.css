@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        @apply [--font-size-title-h1:3.125rem] laptop:[--font-size-title-h1:5.125rem];
+        @apply [--line-height-title-h1:1.1em] laptop:[--line-height-title-h1:1.1em];
+        @apply [--letter-spacing-title-h1:0];
+        @apply [--font-weight-title-h1:900];
+    }
+
+    body {
+        @apply text-white
+    }
+
+    h1 {
+        @apply font-title text-title-h1 font-black;
+      }
+}
+
+@layer components {
+    .btn {
+        @apply flex items-center justify-center text-xl w-max font-semibold bg-red text-white rounded-2xl px-8 py-4 transition-colors;
+        @apply hover:bg-red-light;
+    }
+}
