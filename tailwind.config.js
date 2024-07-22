@@ -24,7 +24,11 @@ export default {
         red: {
           DEFAULT: "#930000",
           light: "#a51515"
-        }
+        },
+        gray: {
+          light: "#9f9f9f",
+          dark: "#101010",
+        },
       },
       fontSize: {
         "title-h1": [
@@ -45,6 +49,9 @@ export default {
       },
       height: {
         hero: "calc(100vh - 80px)",
+      },
+      boxShadow: {
+        navbar: "0px 0px 15px 2px rgb(58, 58, 58)",
       },
     },
   },
