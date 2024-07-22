@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{vue,js}",
   ],
+  darkMode: "class",
   theme: {
     container: {
       center: true,
@@ -23,12 +24,16 @@ export default {
       colors: {
         red: {
           DEFAULT: "#930000",
-          light: "#a51515"
+          light: "#ff0000"
         },
         gray: {
-          light: "#9f9f9f",
+          DEFAULT: "#5e5e5e",
+          light: "#7a7a7a",
           dark: "#101010",
         },
+        white: {
+          DEFAULT: "#ffffff",
+        }
       },
       fontSize: {
         "title-h1": [
@@ -45,7 +50,7 @@ export default {
         text: ["Montserrat", "sans-serif"],
       },
       backgroundImage: {
-        hero: "url(./images/hero/hero-bg.png)",
+        "hero-dark": "url(./images/hero/bg-dark.png)",
       },
       height: {
         hero: "calc(100vh - 80px)",

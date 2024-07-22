@@ -3,10 +3,10 @@
 </script>
 
 <template>
-    <section class="bg-hero bg-center flex h-screen">
+    <section class="bg-center flex h-screen dark:bg-hero-dark">
         <div class="container mt-52">
-            <h1 class="text-red">Mafia Assistant</h1>
-            <div class="flex flex-col text-xl mt-6 font-semibold leading-8">
+            <h1 class="text-red-light dark:text-red">Mafia Assistant</h1>
+            <div class="flex flex-col text-xl mt-6 font-semibold leading-8 text-gray-dark dark:text-white">
                 <span>Your second hand in the mafia world. </span>
                 <span>We've prepared anything you need during the game.</span>
                 <span>And we're glad to make your mafia experience better.</span>
