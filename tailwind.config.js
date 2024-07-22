@@ -44,6 +44,22 @@ export default {
             fontWeight: "var(--font-weight-title-h1)",
           },
         ],
+        "title-h2": [
+          "var(--font-size-title-h2)",
+          {
+            lineHeight: "var(--line-height-title-h2)",
+            letterSpacing: "var(--letter-spacing-title-h2)",
+            fontWeight: "var(--font-weight-title-h2)",
+          },
+        ],
+        "title-h3": [
+          "var(--font-size-title-h3)",
+          {
+            lineHeight: "var(--line-height-title-h3)",
+            letterSpacing: "var(--letter-spacing-title-h3)",
+            fontWeight: "var(--font-weight-title-h3)",
+          },
+        ],
       },
       fontFamily: {
         title: ["Poppins", "sans-serif"],

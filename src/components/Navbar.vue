@@ -11,18 +11,18 @@
                 <img src="../../images/navbar/logo.png" alt="">
             </a>
             <ul class="flex gap-8 text-lg font-semibold">
-                <a class="group flex flex-wrap relative" href="#">
+                <button class="group flex flex-wrap relative">
                     <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Home</li>
                     <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
-                </a>
-                <a class="group flex flex-wrap relative" href="#">
+                </button>
+                <button class="group flex flex-wrap relative" @click="">
                     <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Docs</li>
                     <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
-                </a>
-                <a class="group flex flex-wrap relative" href="#">
+                </button>
+                <button class="group flex flex-wrap relative">
                     <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Generation</li>
                     <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
-                </a>
+                </button>
             </ul>
             <button class="group duration-200 hover:scale-110" @click="switchTheme()">
                 <svg class="dark:hidden" width="26" height="26">

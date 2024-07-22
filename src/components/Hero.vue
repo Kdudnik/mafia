@@ -1,5 +1,5 @@
 <script setup>
-    import Footerbar from './components/Footerbar.vue';
+    import Footerbar from './Footerbar.vue';
 </script>
 
 <template>
