@@ -1,5 +1,5 @@
 <script setup>
-
+    import Footerbar from './components/Footerbar.vue';
 </script>
 
 <template>
@@ -20,6 +20,7 @@
                 </div>
             </a>
         </div>
+        <Footerbar></Footerbar>
     </section>
 </template>
 
