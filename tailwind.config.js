@@ -62,8 +62,8 @@ export default {
         ],
       },
       fontFamily: {
-        title: ["Poppins", "sans-serif"],
-        text: ["Montserrat", "sans-serif"],
+        title: ["Beba", "sans-serif"],
+        text: ["Beba", "sans-serif"],
       },
       backgroundImage: {
         "hero-dark": "url(./images/hero/bg-dark.png)",

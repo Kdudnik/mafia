@@ -5,27 +5,27 @@
 </script>
 
 <template>
-    <header class="fixed flex justify-center h-20 w-full bg-white shadow-navbar dark:bg-gray-dark">
+    <header class="sticky top-0 z-50 flex justify-center h-20 w-full bg-white shadow-navbar dark:bg-gray-dark">
         <nav class="container flex grow items-center justify-between py-3">
             <router-link to="/" class="basis-16 hover:scale-110 duration-200">
-                <img src="../../images/navbar/logo.png" alt="">
+                <img src="../../public/images/navbar/logo.png" alt="">
             </router-link>
-            <ul class="flex gap-8 text-lg font-semibold">
+            <ul class="flex gap-8 text-2xl font-semibold">
                 <button class="group flex flex-wrap relative">
                     <router-link to="/">
-                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Home</li>
+                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light">Home</li>
                         <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
                     </router-link>
                 </button>
                 <button class="group flex flex-wrap relative">
                     <router-link to="/docs">
-                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Docs</li>
+                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light">Docs</li>
                         <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
                     </router-link>
                 </button>
                 <button class="group flex flex-wrap relative">
-                    <router-link to="/">
-                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Generation</li>
+                    <router-link to="/generation">
+                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light">Generation</li>
                         <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
                     </router-link>
                 </button>
@@ -45,5 +45,16 @@
 </template>
 
 <style scoped>
+  @tailwind utilities;
 
+  @layer utilities {
+    .active-page > li {
+        @apply text-gray-light;
+        @apply dark:text-gray-light;
+    }
+
+    .active-page > div {
+        @apply w-full;
+    }
+  }
 </style>

@@ -1,3 +1,5 @@
+@import url(./fonts.css);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,21 +7,21 @@
 @layer base {
   :root {
     /* h1 */
-    @apply [--font-size-title-h1:3.125rem] laptop:[--font-size-title-h1:5.125rem];
+    @apply [--font-size-title-h1:3.125rem] laptop:[--font-size-title-h1:7rem];
     @apply [--line-height-title-h1:1.1em] laptop:[--line-height-title-h1:1.1em];
-    @apply [--letter-spacing-title-h1:0];
+    @apply [--letter-spacing-title-h1:0em];
     @apply [--font-weight-title-h1:900];
     /* h1. */
 
     /* h2 */
-    @apply [--font-size-title-h2:2.5rem] laptop:[--font-size-title-h2:3.5rem];
+    @apply [--font-size-title-h2:2.5rem] laptop:[--font-size-title-h2:4.5rem];
     @apply [--line-height-title-h2:1em] laptop:[--line-height-title-h2:0.9em];
     @apply [--letter-spacing-title-h2:0];
     @apply [--font-weight-title-h2:700];
     /* h2. */
 
     /* h3 */
-    @apply [--font-size-title-h3:2rem] laptop:[--font-size-title-h3:1.75rem];
+    @apply [--font-size-title-h3:2rem] laptop:[--font-size-title-h3:2.25rem];
     @apply [--line-height-title-h3:1em] laptop:[--line-height-title-h3:1.2em];
     @apply [--letter-spacing-title-h3:0];
     @apply [--font-weight-title-h3:700];
@@ -27,7 +29,7 @@
   }
 
   body {
-    @apply text-white dark:bg-gray-dark;
+    @apply text-white dark:bg-gray-dark font-text tracking-widest;
   }
 
   h1 {
@@ -39,7 +41,7 @@
   }
 
   h3 {
-    @apply font-title text-title-h3;
+    @apply font-text text-title-h3;
   }
 }
 

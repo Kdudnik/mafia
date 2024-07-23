@@ -1,17 +1,7 @@
 import { createApp } from 'vue'
-import './style.css'
-import { createRouter, createWebHistory } from 'vue-router'
+import './css/style.css'
 import App from './App.vue'
-import Hero from './views/Hero.vue'
-import Docs from './views/Docs.vue'
-
-const router = createRouter({
-    history: createWebHistory(),
-    routes: [
-        {path: '/', name: 'Hero', component: Hero},
-        {path: '/docs', name: 'Docs', component: Docs}
-    ],
-})
+import router from './router'
 
 createApp(App)
 .use(router)
