@@ -7,21 +7,27 @@
 <template>
     <header class="fixed flex justify-center h-20 w-full bg-white shadow-navbar dark:bg-gray-dark">
         <nav class="container flex grow items-center justify-between py-3">
-            <a href="#" class="basis-16 hover:scale-110 duration-200">
+            <router-link to="/" class="basis-16 hover:scale-110 duration-200">
                 <img src="../../images/navbar/logo.png" alt="">
-            </a>
+            </router-link>
             <ul class="flex gap-8 text-lg font-semibold">
                 <button class="group flex flex-wrap relative">
-                    <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Home</li>
-                    <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
-                </button>
-                <button class="group flex flex-wrap relative" @click="">
-                    <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Docs</li>
-                    <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
+                    <router-link to="/">
+                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Home</li>
+                        <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
+                    </router-link>
                 </button>
                 <button class="group flex flex-wrap relative">
-                    <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Generation</li>
-                    <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
+                    <router-link to="/docs">
+                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Docs</li>
+                        <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
+                    </router-link>
+                </button>
+                <button class="group flex flex-wrap relative">
+                    <router-link to="/">
+                        <li class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-white dark:group-hover:text-gray-light">Generation</li>
+                        <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"></div>
+                    </router-link>
                 </button>
             </ul>
             <button class="group duration-200 hover:scale-110" @click="switchTheme()">
