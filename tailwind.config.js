@@ -32,7 +32,7 @@ export default {
           dark: "#101010",
         },
         white: {
-          DEFAULT: "#ffffff",
+          DEFAULT: "#d5d5d5",
         }
       },
       fontSize: {
@@ -58,6 +58,14 @@ export default {
             lineHeight: "var(--line-height-title-h3)",
             letterSpacing: "var(--letter-spacing-title-h3)",
             fontWeight: "var(--font-weight-title-h3)",
+          },
+        ],
+        "title-h4": [
+          "var(--font-size-title-h4)",
+          {
+            lineHeight: "var(--line-height-title-h4)",
+            letterSpacing: "var(--letter-spacing-title-h4)",
+            fontWeight: "var(--font-weight-title-h4)",
           },
         ],
       },

@@ -21,11 +21,18 @@
     /* h2. */
 
     /* h3 */
-    @apply [--font-size-title-h3:2rem] laptop:[--font-size-title-h3:2.25rem];
-    @apply [--line-height-title-h3:1em] laptop:[--line-height-title-h3:1.2em];
+    @apply [--font-size-title-h3:3.5rem] laptop:[--font-size-title-h3:2.5rem];
+    @apply [--line-height-title-h3:1em] laptop:[--line-height-title-h3:0.9em];
     @apply [--letter-spacing-title-h3:0];
     @apply [--font-weight-title-h3:700];
     /* h3. */
+
+    /* h4 */
+    @apply [--font-size-title-h4:2rem] laptop:[--font-size-title-h4:2rem];
+    @apply [--line-height-title-h4:1em] laptop:[--line-height-title-h4:1.2em];
+    @apply [--letter-spacing-title-h4:0];
+    @apply [--font-weight-title-h4:700];
+    /* h4. */
   }
 
   body {
@@ -41,7 +48,11 @@
   }
 
   h3 {
-    @apply font-text text-title-h3;
+    @apply font-title text-title-h3;
+  }
+
+  h4 {
+    @apply font-text text-title-h4;
   }
 }
 

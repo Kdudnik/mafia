@@ -1,19 +1,36 @@
 <script setup>
-
+    function anchorScroll(event) {
+        // window.scrollTo(0, )
+        console.log(event)
+    }
 </script>
 
 <template>
-    <section class="container mt-52">
-        <div class="flex justify-between items-start relative">
-            <div class="basis-3/4">
-                <h2>Individual Roles</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, in animi maxime consequuntur quis dolorem atque eius, veritatis, nam exercitationem repellendus ratione ab! Exercitationem fugiat sed mollitia inventore nemo. Facilis.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa accusamus ducimus incidunt doloribus quibusdam quas voluptates rerum aut quaerat eligendi laborum modi odio minus explicabo, fugiat veniam corporis reiciendis adipisci.</p>
-            </div>
+    <section class="container mt-24">
+        <div class="flex justify-between items-start relative h-[10000px]">
+            <router-view></router-view>
             <nav class="sticky top-52 right-0">
                 <div class="flex flex-col gap-8 border-white border-l-2 border-solid pl-6">
                     <div>
-                        <h3>Roles:</h3>
+                        <h4>
+                            <router-link to="/docs/rules">Roles:</router-link>
+                        </h4>
+                        <ul class="ml-4">
+                            <li>
+                                <button @click="anchorScroll()" :data-anchor-btn="mafia">Mafia</button>
+                            </li>
+                            <li>
+                                <button @click="anchorScroll()" :data-anchor-btn="sherif">Sherif</button>
+                            </li>
+                            <li>
+                                <button @click="anchorScroll()" :data-anchor-btn="civilian">Civilian</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>
+                            <router-link to="/docs/game">Game:</router-link>
+                        </h4>
                         <ul class="ml-4">
                             <li>Mafia</li>
                             <li>Sherif</li>
@@ -21,7 +38,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h3>Game:</h3>
+                        <h4>Stage:</h4>
                         <ul class="ml-4">
                             <li>Mafia</li>
                             <li>Sherif</li>
@@ -29,15 +46,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h3>Stage:</h3>
-                        <ul class="ml-4">
-                            <li>Mafia</li>
-                            <li>Sherif</li>
-                            <li>Civilian</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Help:</h3>
+                        <h4>Help:</h4>
                         <ul class="ml-4">
                             <li>Mafia</li>
                             <li>Sherif</li>
