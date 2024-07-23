@@ -35,6 +35,10 @@
     /* h4. */
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply text-white dark:bg-gray-dark font-text tracking-widest;
   }

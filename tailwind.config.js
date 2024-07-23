@@ -74,7 +74,7 @@ export default {
         text: ["Beba", "sans-serif"],
       },
       backgroundImage: {
-        "hero-dark": "url(./images/hero/bg-dark.png)",
+        "hero-dark": "url(/images/hero/bg-dark.png)",
       },
       height: {
         hero: "calc(100vh - 80px)",

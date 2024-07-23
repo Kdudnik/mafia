@@ -4,7 +4,7 @@ import Hero from '../views/Hero.vue'
 const routes = [
     {path: '/', name: 'Hero', component: Hero},
     {
-        path: '/docs/rules',
+        path: '/docs',
         name: 'Docs',
         component: ()=>import("../views/Docs.vue"),
         children: [

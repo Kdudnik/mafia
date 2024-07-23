@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "home": "Home",
+    "docs": "Docs",
+    "generation": "Generation"
+  },
+  "hero": {
+    "title": "Mafia Assistant",
+    "subtitles": {
+      "first": "Your second hand in the mafia world.",
+      "second": "We've prepared anything you need during the game.",
+      "third": "And we're glad to make your mafia experience better."
+    },
+    "btn": "Get Started"
+  },
+  "footer": "Join us:"
+}

@@ -4,7 +4,7 @@
 <template>
     <div class="basis-3/4">
         <h2>Rules:</h2>
-        <div class="mt-96 pb-4 border-b-2 border-white border-solid" data-anchor="mafia">
+        <div class="mt-96 pb-4 border-b-2 border-white border-solid [scroll-margin-top:150px]" id="mafia">
             <h3>Mafia:</h3>
             <div class="mt-8 flex flex-col gap-4 text-xl">
                 <p>

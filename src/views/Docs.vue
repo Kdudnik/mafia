@@ -1,13 +1,9 @@
 <script setup>
-    function anchorScroll(event) {
-        // window.scrollTo(0, )
-        console.log(event)
-    }
 </script>
 
 <template>
     <section class="container mt-24">
-        <div class="flex justify-between items-start relative h-[10000px]">
+        <div class="flex justify-between items-start relative">
             <router-view></router-view>
             <nav class="sticky top-52 right-0">
                 <div class="flex flex-col gap-8 border-white border-l-2 border-solid pl-6">
@@ -17,13 +13,13 @@
                         </h4>
                         <ul class="ml-4">
                             <li>
-                                <button @click="anchorScroll()" :data-anchor-btn="mafia">Mafia</button>
+                                <a href="#mafia">Mafia</a>
                             </li>
                             <li>
-                                <button @click="anchorScroll()" :data-anchor-btn="sherif">Sherif</button>
+                                <button>Sherif</button>
                             </li>
                             <li>
-                                <button @click="anchorScroll()" :data-anchor-btn="civilian">Civilian</button>
+                                <button>Civilian</button>
                             </li>
                         </ul>
                     </div>
