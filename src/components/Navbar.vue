@@ -32,7 +32,7 @@ function switchLanguage() {
                     </router-link>
                 </button>
                 <button class="group flex flex-wrap relative">
-                    <router-link to="/docs/rules">
+                    <router-link to="/docs/roles">
                         <li
                             class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light">
                             {{ $t("navbar.docs") }}
@@ -63,7 +63,7 @@ function switchLanguage() {
                             d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z" />
                     </svg>
                 </button>
-                <button class="w-10 h-6 rounded-sm overflow-hidden brightness-75 duration-200 hover:scale-110" @click="switchLanguage">
+                <button class="w-10 h-6 rounded-sm overflow-hidden dark:brightness-50 duration-200 hover:scale-110 dark:hover:brightness-75" @click="switchLanguage">
                     <img class="h-full w-full" :src="`/images/navbar/${$i18n.locale}.png`" alt="">
                 </button>
             </div>

@@ -9,9 +9,9 @@ const routes = [
         component: ()=>import("../views/Docs.vue"),
         children: [
             {
-                path: '/docs/rules',
-                name: "Rules",
-                component: ()=>import("../views/Rules.vue")
+                path: '/docs/roles',
+                name: "Roles",
+                component: ()=>import("../views/Roles.vue")
             },
             {
                 path: '/docs/game',

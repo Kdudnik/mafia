@@ -3,8 +3,8 @@
 
 <template>
     <div class="basis-3/4">
-        <h2>Rules:</h2>
-        <div class="mt-96 pb-4 border-b-2 border-white border-solid [scroll-margin-top:150px]" id="mafia">
+        <h2>Roles:</h2>
+        <div class="mt-32 pb-4 border-b-2 border-gray-dark dark:border-white border-solid scroll-mt-40" id="mafia">
             <h3>Mafia:</h3>
             <div class="mt-8 flex flex-col gap-4 text-xl">
                 <p>
@@ -21,7 +21,7 @@
                 </p>
             </div>
         </div>
-        <div class="mt-96 pb-4 border-b-2 border-white border-solid" data-anchor="sherif">
+        <div class="mt-32 pb-4 border-b-2 border-gray-dark dark:border-white border-solid scroll-mt-40" id="sherif">
             <h3>Sherif:</h3>
             <div class="mt-8 flex flex-col gap-4 text-xl">
                 <p>
@@ -44,7 +44,7 @@
                 </p>
             </div>
         </div>
-        <div class="mt-96 pb-4 border-b-2 border-white border-solid" data-anchor="civilian">
+        <div class="mt-32 pb-4 border-b-2 border-gray-dark dark:border-white border-solid scroll-mt-40" id="civilian">
             <h3>Civilian:</h3>
             <div class="mt-8 flex flex-col gap-4 text-xl">
                 <p>
