@@ -1,0 +1,87 @@
+{
+  "docs": {
+    "rules": {
+      "id": "rules",
+      "topicsIds": [
+        {
+          "id": "general"
+        },
+        {
+          "id": "redTeam"
+        },
+        {
+          "id": "blackTeam"
+        }
+      ]
+    },
+    "stages": {
+      "id": "stages",
+      "topicsIds": [
+        {
+          "id": ""
+        },
+        {
+          "id": "day"
+        },
+        {
+          "id": "night"
+        },
+        {
+          "id": "voting"
+        }
+      ]
+    },
+    "roles": {
+      "id": "roles",
+      "topicsIds": [
+        {
+          "id": "civilian"
+        },
+        {
+          "id": "detective"
+        },
+        {
+          "id": "doctor"
+        },
+        {
+          "id": "mafia"
+        },
+        {
+          "id": "don"
+        }
+      ]
+    }
+  },
+  "sidebar": [
+    {
+      "link": "/docs/rules",
+      "anchor": "#rules",
+      "topics": [
+        {
+          "anchor": "#general"
+        },
+        {
+          "anchor": "#redTeam"
+        },
+        {
+          "anchor": "#blackTeam"
+        }
+      ]
+    },
+    {
+      "link": "/docs/stages",
+      "anchor": "#stages",
+      "topics": [
+        {
+          "anchor": "#day"
+        },
+        {
+          "anchor": "#night"
+        },
+        {
+          "anchor": "#voting"
+        }
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@ export default {
     container: {
       center: true,
       screens: {
-        desktop: "1280px",
+        desktop: "1500px",
       },
       padding: {
         DEFAULT: "1.25rem",
@@ -22,17 +22,19 @@ export default {
     },
     extend: {
       colors: {
-        red: {
-          DEFAULT: "#930000",
-          light: "#ff0000"
+        yellow: {
+          DEFAULT: "#b98f21",
+          light: "#d0a830"
         },
         gray: {
           DEFAULT: "#5e5e5e",
           light: "#7a7a7a",
+          "semi-dark": "#373737",
           dark: "#101010",
         },
         white: {
-          DEFAULT: "#d5d5d5",
+          DEFAULT: "#ffffff",
+          dark: "#d5d5d5"
         }
       },
       fontSize: {
@@ -70,17 +72,19 @@ export default {
         ],
       },
       fontFamily: {
-        title: ["Beba", "sans-serif"],
-        text: ["Beba", "sans-serif"],
+        title: ["The Godfather", "sans-serif"],
+        text: ["Onest", "sans-serif"],
+      },
+      backgroundPosition: {
+        "pos-dark": "0 20%",
+        "pos-light": "0 40%",
       },
       backgroundImage: {
-        "hero-dark": "url(/images/hero/bg-dark.png)",
+        "dark": "url(/images/hero/bg-dark.jpg)",
+        "light": "url(/images/hero/bg-white.jpg)",
       },
       height: {
         hero: "calc(100vh - 80px)",
-      },
-      boxShadow: {
-        navbar: "0px 0px 15px 2px rgb(58, 58, 58)",
       },
     },
   },

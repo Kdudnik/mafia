@@ -5,13 +5,113 @@
     "generation": "Generation"
   },
   "hero": {
-    "title": "Mafia Assistant",
-    "subtitles": {
-      "first": "Your second hand in the mafia world.",
-      "second": "We've prepared anything you need during the game.",
-      "third": "And we're glad to make your mafia experience better."
-    },
+    "subtitles": [
+      "Your second hand in the mafia world.",
+      "We've prepared anything you need during the game.",
+      "And we're glad to make your mafia experience better."
+    ],
     "btn": "Get Started"
   },
-  "footer": "Join us:"
+  "footer": "Join us:",
+  "docs": {
+    "rules": {
+      "title": "Rules:",
+      "blocks": [
+        {
+          "title": "General:",
+          "text": "Mafia is a role-playing board game that showcases your eloquence and ability to persuade other participants. The concept of the game is to win by eliminating players from the opposing teams. In classic Mafia, there are two teams"
+        },
+        {
+          "title": "Red Team:",
+          "text": "This group consists of the following roles: Civilian, Detective, and Doctor. The task of the \"reds\" is to survive until the end of the game and identify the mafia members."
+        },
+        {
+          "title": "Black Team:",
+          "text": "They are the Mafia and the Don. The task of this team is to stay hidden from the red players as long as possible to avoid being voted out. Additionally, they aim to kill the red team members at night to ultimately gain superiority over their opponents."
+        }
+      ]
+    },
+    "stages": {
+      "title": "Stages of the Game:",
+      "blocks": [
+        {
+          "title": "",
+          "text": "The game is divided into two phases - Day and Night. During the day, players discuss and exchange their ideas about identifying the mafia, while the black team players try to mislead the red team. During the night all of the events from active roles will happen."
+        },
+        {
+          "title": "Day:",
+          "text": "The game starts with the Day phase. The first day is different from the others, as it might be the only day without any killings. Each player is given equal time to speak during the first day, after which everyone goes into the night. No voting takes place on the first day. The second and subsequent days begin with:",
+          "list": [
+            "1) Announcement of the night's events (who the mafia killed, was a player saved by a doc or not).",
+            "2) All players are given time to make a general speech.",
+            "3) Individual speeches follow, where each player can speak their mind and nominate someone for voting.",
+            "4) Voting takes place, where players decide who will not survive to the next night."
+          ]
+        },
+        {
+          "title": "Night:",
+          "text": "At night, the town goes to sleep, and it's time for active roles (everyone except civilians). The players representing their roles wake up in sequence and choose their victim/target. First, the mafia wakes up and decides who will not survive the night. The mafia then goes back to sleep, but the Don stays awake to try to identify the Detective. After the Don goes back to sleep, the Detective wakes up to search for mafia members. Finally, the Doctor wakes up to try to save the player who they believe will be targeted by the mafia. After the Doctor goes back to sleep, the day begins, and the town wakes up."
+        },
+        {
+          "title": "Voting:",
+          "text": "Voting takes place during the day after all players have made their speeches. All nominated players are at risk of being eliminated. In the order they were nominated, the master gives three seconds to cast their vote. Voting is MANDATORY and can only be done ONCE. The player with the most votes is eliminated from the game. If two or more players receive an equal number of votes, they have the right to another speech before a re-vote, where votes can only be cast for those who just spoke. This process can repeat until only two nominated players remain. After they give their final speeches, a final vote takes place. If the town still cannot decide, the town goes into the night without any eliminations, called a \"draw\"."
+        }
+      ]
+    },
+    "roles": {
+      "title": "Roles:",
+      "blocks": [
+        {
+          "title": "Civilian:",
+          "text": "A role without specific abilities. They can only speak during the day and vote after speeches. They do nothing at night. Their task is to identify and eliminate the mafia before the mafia eradicates the town."
+        },
+        {
+          "title": "Detective:",
+          "text": "A mafia hunter. The Detective wakes up at night to investigate one player's home and learn whether they are a member of the mafia."
+        },
+        {
+          "title": "Doctor:",
+          "text": "Wakes up at night to try to save one of the participants. The Doctor can heal a player only twice per game and cannot heal the same player two nights in a row. If the Doctor heals the player targeted by the mafia that night, the player survives and continues the game."
+        },
+        {
+          "title": "Mafia:",
+          "text": "Wakes up at night to try to save one of the participants. The Doctor can heal a player only twice per game and cannot heal the same player two nights in a row. If the Doctor heals the player targeted by the mafia that night, the player survives and continues the game."
+        },
+        {
+          "title": "Don:",
+          "text": "Similar to the Detective, but for the mafia side. The Don follows the same algorithm to identify the Detective before they find all the mafia members."
+        }
+      ]
+    }
+  },
+  "sidebar": [
+    {
+      "title": "Rules",
+      "topics": [
+        {
+          "title": "General"
+        },
+        {
+          "title": "Red Team"
+        },
+        {
+          "title": "Black Team"
+        }
+      ]
+    },
+    {
+      "title": "Stages",
+      "topics": [
+        {
+          "title": "Day"
+        },
+        {
+          "title": "Night"
+        },
+        {
+          "title": "Voting"
+        }
+      ]
+    }
+  ]
 }

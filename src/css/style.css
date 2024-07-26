@@ -1,4 +1,5 @@
 @import url(./fonts.css);
+@import url('https://fonts.cdnfonts.com/css/the-godfather');
 
 @tailwind base;
 @tailwind components;
@@ -7,10 +8,10 @@
 @layer base {
   :root {
     /* h1 */
-    @apply [--font-size-title-h1:3.125rem] laptop:[--font-size-title-h1:7rem];
-    @apply [--line-height-title-h1:1.1em] laptop:[--line-height-title-h1:1.1em];
-    @apply [--letter-spacing-title-h1:0em];
-    @apply [--font-weight-title-h1:900];
+    @apply [--font-size-title-h1:3.125rem] laptop:[--font-size-title-h1:10.75rem];
+    @apply [--line-height-title-h1:1.1em] laptop:[--line-height-title-h1:0.8em];
+    @apply [--letter-spacing-title-h1:0.04em];
+    @apply [--font-weight-title-h1:400];
     /* h1. */
 
     /* h2 */
@@ -44,15 +45,15 @@
   }
 
   h1 {
-    @apply font-title text-title-h1 font-black;
+    @apply font-title text-title-h1;
   }
 
   h2 {
-    @apply font-title text-title-h2;
+    @apply font-text text-title-h2;
   }
 
   h3 {
-    @apply font-title text-title-h3;
+    @apply font-text text-title-h3;
   }
 
   h4 {
@@ -62,8 +63,8 @@
 
 @layer components {
   .btn {
-    @apply flex items-center justify-center text-xl w-max font-semibold bg-red-light text-white rounded-2xl px-8 py-4 transition-colors;
-    @apply dark:bg-red;
-    @apply hover:bg-red dark:hover:bg-red-light;
+    @apply flex items-center justify-center text-xl w-max font-semibold bg-gray-semi-dark text-white rounded-2xl px-8 py-4 transition-colors;
+    @apply dark:bg-white dark:text-gray-dark;
+    @apply hover:bg-yellow-light;
   }
 }
