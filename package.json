@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --config eslint.config.js .",
+    "lint:fix": "eslint --config eslint.config.js . --fix"
   },
   "dependencies": {
     "vue": "^3.4.31",

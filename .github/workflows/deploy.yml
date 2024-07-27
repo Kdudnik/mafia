@@ -1,0 +1,41 @@
+name: DEPLOY TO SERVER
+run-name: ${{ github.actor }} deploying 🚀
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+          cache-dependency-path: ${{github.workspace}}/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Build assets
+        run: pnpm build
+
+      - name: Sync files
+        run: sudo rsync -azvh -e 'ssh -p 8082' ./dist/ web-user@195.72.144.73:/media/ssd-server/webserver/projects/mafia
