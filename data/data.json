@@ -54,7 +54,7 @@
   },
   "sidebar": [
     {
-      "link": "/docs/rules",
+      "link": "rules",
       "anchor": "#rules",
       "topics": [
         {
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "link": "/docs/stages",
+      "link": "stages",
       "anchor": "#stages",
       "topics": [
         {

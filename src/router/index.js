@@ -9,9 +9,19 @@ const routes = [
     component: () => import("../views/DocsView.vue"),
     children: [
       {
-        path: "/docs/:title",
-        name: "docs.title",
-        component: () => import("../views/DocsContentView.vue"),
+        path: "/docs/rules",
+        name: "docs.rules",
+        component: () => import("../views/RulesView.vue"),
+      },
+      {
+        path: "/docs/stages",
+        name: "docs.stages",
+        component: () => import("../views/StagesView.vue"),
+      },
+      {
+        path: "/docs/roles",
+        name: "docs.roles",
+        component: () => import("../views/RolesView.vue"),
       },
     ],
   },
