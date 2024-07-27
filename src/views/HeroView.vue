@@ -1,13 +1,13 @@
 <script setup>
 import FooterBar from "../components/FooterBar.vue";
-import Navbar from "../components/Navbar.vue";
+import NavBar from "../components/NavBar.vue";
 </script>
 
 <template>
   <div
     class="absolute h-full w-full -z-50 bg-pos-light bg-no-repeat bg-light dark:bg-pos-dark dark:bg-dark dark:bg-cover"
   />
-  <Navbar />
+  <NavBar />
   <section class="flex h-hero">
     <div class="container mt-52">
       <h1 class="text-yellow-light dark:text-yellow">

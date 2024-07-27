@@ -1,27 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Hero from "../views/Hero.vue";
+import HeroView from "../views/HeroView.vue";
 
 const routes = [
-  { path: "/", name: "Hero", component: Hero },
+  { path: "/", name: "hero", component: HeroView },
   {
     path: "/docs",
-    name: "Docs",
-    component: () => import("../views/Docs.vue"),
+    name: "docs",
+    component: () => import("../views/DocsView.vue"),
     children: [
       {
-        path: "/docs/rules",
-        name: "Rules",
-        component: () => import("../views/Rules.vue"),
-      },
-      {
-        path: "/docs/stages",
-        name: "Stages",
-        component: () => import("../views/Stages.vue"),
-      },
-      {
-        path: "/docs/roles",
-        name: "Roles",
-        component: () => import("../views/Roles.vue"),
+        path: "/docs/:title",
+        name: "docs.title",
+        component: () => import("../views/DocsContentView.vue"),
       },
     ],
   },

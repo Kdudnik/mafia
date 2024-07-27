@@ -23,7 +23,8 @@ const hasTranslation = (i) => !!Object.values(tm(`sidebar[${i}]`)).length;
       >
         <div v-if="hasTranslation(index)">
           <h4 class="duration-200 hover:text-gray-light">
-            <router-link :to="`${block.link}${block.anchor}`">
+            <router-link :to="{name: 'docs.title', params: {title: `${block.link}${block.anchor}`}}">
+              <!-- :to="{name: 'docs.title', params: {title: `${block.link}${block.anchor}`}}" -->
               {{ $t(`sidebar[${index}].title`) }}
             </router-link>
           </h4>

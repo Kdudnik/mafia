@@ -64,7 +64,7 @@
 @layer components {
   .btn {
     @apply flex items-center justify-center text-xl w-max font-semibold bg-gray-semi-dark text-white rounded-2xl px-8 py-4 transition-colors;
-    @apply dark:bg-white dark:text-gray-dark;
+    @apply dark:bg-white-dark dark:text-gray-dark;
     @apply hover:bg-yellow-light;
   }
 }
