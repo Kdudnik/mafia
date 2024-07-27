@@ -41,7 +41,7 @@ function switchLanguage() {
           </router-link>
         </button>
         <button class="group flex flex-wrap relative">
-          <router-link :to="{name: 'docs.title', params: {title: 'rules'}}">
+          <router-link :to="{name: 'docs.rules', hash: '#rules'}">
             <li
               class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light"
             >

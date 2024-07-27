@@ -17,28 +17,29 @@ const hasTranslation = (i) => !!Object.values(tm(`sidebar[${i}]`)).length;
     <div
       class="flex flex-col gap-8 border-l-2 border-solid pl-6 border-gray-dark text-gray-dark dark:text-white dark:border-white"
     >
-      <template
-        v-for="(block, index) in data.sidebar"
-        :key="index"
-      >
+      <template v-for="(block, index) in data.sidebar" :key="index">
         <div v-if="hasTranslation(index)">
           <h4 class="duration-200 hover:text-gray-light">
-            <router-link :to="{name: 'docs.title', params: {title: `${block.link}${block.anchor}`}}">
-              <!-- :to="{name: 'docs.title', params: {title: `${block.link}${block.anchor}`}}" -->
+            <router-link
+              :to="{
+                name: `docs.${block.link}`,
+                hash: block.anchor,
+              }"
+            >
               {{ $t(`sidebar[${index}].title`) }}
             </router-link>
           </h4>
           <ul class="ml-4 text-gray-dark dark:text-white">
-            <li
-              v-for="(topic, i) in block.topics"
-              :key="i"
-            >
-              <a
+            <li v-for="(topic, i) in block.topics" :key="i">
+              <router-link
+                :to="{
+                  name: `docs.${block.link}`,
+                  hash: topic.anchor,
+                }"
                 class="duration-200 hover:text-gray-light"
-                :href="`${block.link}${topic.anchor}`"
               >
                 {{ $t(`sidebar[${index}].topics[${i}].title`) }}
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
