@@ -1,20 +1,29 @@
-<script></script>
+<script setup>
+defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
 
 <template>
   <div>
-    <h2>{{ $t("docs.roles.title") }}</h2>
+    <h2 :id="data.docs.roles.id">
+      {{ $t("docs.roles.title") }}
+    </h2>
     <div
-      v-for="(block, index) in $tm('docs.roles.blocks')"
+      v-for="(block, index) in data.docs.roles.topicsIds"
       :id="block.id"
       :key="index"
       class="mt-32 pb-4 border-b-2 border-gray-dark dark:border-white border-solid scroll-mt-40"
     >
-      <h3>{{ block.title }}</h3>
+      <h3>{{ $tm(`docs.roles.blocks[${index}].title`) }}</h3>
       <div class="mt-8 flex flex-col gap-4 text-xl">
-        <p>{{ block.text }}</p>
-        <ul v-if="block.list">
+        <p>{{ $tm(`docs.roles.blocks[${index}].text`) }}</p>
+        <ul v-if="$tm(`docs.roles.blocks${[index]}.list`)">
           <li
-            v-for="(el, i) in block.list"
+            v-for="(el, i) in $tm(`docs.roles.blocks${[index]}.list`)"
             :key="i"
           >
             {{ el }}

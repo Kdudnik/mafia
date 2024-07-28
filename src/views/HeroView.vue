@@ -9,12 +9,12 @@ import NavBar from "../components/NavbarComponent.vue";
   />
   <NavBar />
   <section class="flex h-hero">
-    <div class="container mt-52">
-      <h1 class="text-yellow-light dark:text-yellow">
+    <div class="container flex flex-col justify-center">
+      <h1 class="text-yellow-light dark:text-yellow animate-fade-down">
         Mafia Assistant
       </h1>
       <div
-        class="flex flex-col text-lg mt-6 font-semibold leading-8 text-gray-dark dark:text-white-dark"
+        class="flex flex-col text-lg mt-6 font-semibold leading-8 animate-fade-down animate-delay-150 text-gray-dark dark:text-white-dark"
       >
         <span
           v-for="(subtitle, index) in $tm('hero.subtitles')"
@@ -24,7 +24,7 @@ import NavBar from "../components/NavbarComponent.vue";
         </span>
       </div>
       <router-link to="/docs/rules">
-        <button class="group btn mt-16 flex gap-4">
+        <button class="group btn mt-16 flex gap-4 animate-fade-down animate-delay-300">
           <span>{{ $t("hero.btn") }}</span>
           <div
             class="w-6 overflow-hidden flex justify-end duration-150 group-hover:w-9"
