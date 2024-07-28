@@ -13,7 +13,7 @@ defineProps({
 const hasTranslation = (i) => !!Object.values(tm(`sidebar[${i}]`)).length;
 </script>
 <template>
-  <nav class="sticky top-52 right-0">
+  <nav class="sticky top-52 right-0 animate-fade-down">
     <div
       class="flex flex-col gap-8 border-l-2 border-solid pl-6 border-gray-dark text-gray-dark dark:text-white dark:border-white"
     >
@@ -22,7 +22,7 @@ const hasTranslation = (i) => !!Object.values(tm(`sidebar[${i}]`)).length;
         :key="index"
       >
         <div v-if="hasTranslation(index)">
-          <h4 class="duration-200 hover:text-gray-light">
+          <h4 class="duration-200 hover:text-gray-light animate-fade-down">
             <router-link
               :to="{
                 name: `docs.${block.link}`,
@@ -32,7 +32,7 @@ const hasTranslation = (i) => !!Object.values(tm(`sidebar[${i}]`)).length;
               {{ $t(`sidebar[${index}].title`) }}
             </router-link>
           </h4>
-          <ul class="ml-4 text-gray-dark dark:text-white">
+          <ul class="ml-4 animate-fade-down animate-delay-150 text-gray-dark dark:text-white">
             <li
               v-for="(topic, i) in block.topics"
               :key="i"

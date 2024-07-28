@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div>
+  <div class="animate-fade-right">
     <h2 :id="data.docs.rules.id" class="animate-fade-down">
       {{ $t("docs.rules.title") }}
     </h2>
