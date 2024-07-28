@@ -37,5 +37,13 @@ jobs:
       - name: Build assets
         run: pnpm build
 
-      - name: Sync files
-        run: sudo rsync -azvh -e 'ssh -p 8082' ./dist/ web-user@195.72.144.73:/media/ssd-server/webserver/projects/mafia
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 8082 195.72.144.73 >> ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_MAFIA_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Sync files with rsync
+        run: |
+          rsync -azvh -e 'ssh -p 8082' ./dist/ web-user@195.72.144.73:/media/ssd-server/webserver/projects/mafia
