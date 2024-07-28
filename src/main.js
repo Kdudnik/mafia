@@ -12,8 +12,8 @@ const locales = createI18n({
         "en": en,
         "ua": ua,
     },
-    locale: "en",
-    fallbackLocale: "ua",
+    locale: "ua",
+    fallbackLocale: "en",
     legacy: false,
 });
 
