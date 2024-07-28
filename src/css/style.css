@@ -8,8 +8,8 @@
 @layer base {
   :root {
     /* h1 */
-    @apply [--font-size-title-h1:3.125rem] laptop:[--font-size-title-h1:10.75rem];
-    @apply [--line-height-title-h1:1.1em] laptop:[--line-height-title-h1:0.8em];
+    @apply [--font-size-title-h1:10.75rem];
+    @apply laptop:[--line-height-title-h1:0.8em];
     @apply [--letter-spacing-title-h1:0.04em];
     @apply [--font-weight-title-h1:400];
     /* h1. */
@@ -42,6 +42,7 @@
 
   body {
     @apply text-white dark:bg-gray-dark font-text tracking-widest;
+    @apply animate-duration-700;
   }
 
   h1 {

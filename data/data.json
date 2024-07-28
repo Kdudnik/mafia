@@ -82,6 +82,27 @@
           "anchor": "#voting"
         }
       ]
+    },
+    {
+      "link": "roles",
+      "anchor": "#roles",
+      "topics": [
+        {
+          "anchor": "#civilian"
+        },
+        {
+          "anchor": "#detective"
+        },
+        {
+          "anchor": "#doctor"
+        },
+        {
+          "anchor": "#mafia"
+        },
+        {
+          "anchor": "#don"
+        }
+      ]
     }
   ]
 }

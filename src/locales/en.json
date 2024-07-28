@@ -112,6 +112,26 @@
           "title": "Voting"
         }
       ]
+    },
+    {
+      "title": "Roles",
+      "topics": [
+        {
+          "title": "Civilian"
+        },
+        {
+          "title": "Detective"
+        },
+        {
+          "title": "Doctor"
+        },
+        {
+          "title": "Mafia"
+        },
+        {
+          "title": "Don"
+        }
+      ]
     }
   ]
 }
