@@ -1,0 +1,71 @@
+@import url(./fonts.css);
+@import url('https://fonts.cdnfonts.com/css/the-godfather');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* h1 */
+    @apply [--font-size-title-h1:10.75rem];
+    @apply laptop:[--line-height-title-h1:0.8em];
+    @apply [--letter-spacing-title-h1:0.04em];
+    @apply [--font-weight-title-h1:400];
+    /* h1. */
+
+    /* h2 */
+    @apply [--font-size-title-h2:2.5rem] laptop:[--font-size-title-h2:4.5rem];
+    @apply [--line-height-title-h2:1em] laptop:[--line-height-title-h2:0.9em];
+    @apply [--letter-spacing-title-h2:0];
+    @apply [--font-weight-title-h2:700];
+    /* h2. */
+
+    /* h3 */
+    @apply [--font-size-title-h3:3.5rem] laptop:[--font-size-title-h3:2.5rem];
+    @apply [--line-height-title-h3:1em] laptop:[--line-height-title-h3:0.9em];
+    @apply [--letter-spacing-title-h3:0];
+    @apply [--font-weight-title-h3:700];
+    /* h3. */
+
+    /* h4 */
+    @apply [--font-size-title-h4:2rem] laptop:[--font-size-title-h4:2rem];
+    @apply [--line-height-title-h4:1em] laptop:[--line-height-title-h4:1.2em];
+    @apply [--letter-spacing-title-h4:0];
+    @apply [--font-weight-title-h4:700];
+    /* h4. */
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply text-white dark:bg-gray-dark font-text tracking-widest;
+    @apply animate-duration-700;
+  }
+
+  h1 {
+    @apply font-title text-title-h1;
+  }
+
+  h2 {
+    @apply font-text text-title-h2;
+  }
+
+  h3 {
+    @apply font-text text-title-h3;
+  }
+
+  h4 {
+    @apply font-text text-title-h4;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex items-center justify-center text-xl w-max font-semibold bg-gray-semi-dark text-white rounded-2xl px-8 py-4 transition-colors;
+    @apply dark:bg-white-dark dark:text-gray-dark;
+    @apply hover:bg-yellow-light;
+  }
+}

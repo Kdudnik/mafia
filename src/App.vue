@@ -1,11 +1,10 @@
 <script setup>
-    import LogInForm from './components/LogInForm.vue';
+import LogInForm from "./components/LogInForm.vue";
 </script>
 
 <template>
-    <LogInForm></LogInForm>
+  <LogInForm />
+  <router-view />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
