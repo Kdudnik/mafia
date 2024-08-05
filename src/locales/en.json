@@ -2,7 +2,8 @@
   "navbar": {
     "home": "Home",
     "docs": "Docs",
-    "generation": "Generation"
+    "generation": "Generation",
+    "signUp": "Sign Up"
   },
   "hero": {
     "subtitles": [
@@ -133,5 +134,30 @@
         }
       ]
     }
-  ]
+  ],
+  "auth": {
+    "fields": {
+        "name": "Displayed Name",
+        "email": "Email",
+        "password": "Password"
+    },
+    "signUp": {
+      "button": "Sign Up",
+      "linkText": "Already have an account?",
+      "link": "Sign In"
+    },
+    "signIn": {
+      "button": "Sign In",
+      "linkText": "Don't have an account yet?",
+      "link": "Sign Up"
+    },
+    "error": {
+      "noEmail": "Email is required",
+      "wrongEmail": "Please write a real email",
+      "longEmail": "Your email is too long",
+      "noPassword": "Password is required",
+      "shortPassword": "Password must be at least 8 symbols",
+      "longPassword": "Password can't be logner than 254 symbols"
+    }
+  }
 }

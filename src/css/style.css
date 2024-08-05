@@ -41,7 +41,7 @@
   }
 
   body {
-    @apply text-white dark:bg-gray-dark font-text tracking-widest;
+    @apply text-gray-dark dark:text-white-dark dark:bg-gray-dark font-text tracking-widest;
     @apply animate-duration-700;
   }
 
@@ -60,12 +60,22 @@
   h4 {
     @apply font-text text-title-h4;
   }
+
+  input {
+    @apply focus-visible:outline-none;
+  }
 }
 
 @layer components {
   .btn {
-    @apply flex items-center justify-center text-xl w-max font-semibold bg-gray-semi-dark text-white rounded-2xl px-8 py-4 transition-colors;
+    @apply flex items-center justify-center text-xl w-max font-semibold bg-gray-semi-dark text-white rounded-2xl px-8 py-4 duration-150;
     @apply dark:bg-white-dark dark:text-gray-dark;
     @apply hover:bg-yellow-light;
+  }
+
+  .btn.btn-transparent {
+    @apply bg-transparent text-gray-dark px-4 py-2 border-solid border-2 border-gray-dark;
+    @apply dark:text-white-dark dark:border-white;
+    @apply hover:bg-gray-light hover:bg-opacity-30;
   }
 }

@@ -25,6 +25,23 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/auth",
+    name: "auth",
+    component: () => import("../views/AuthPage.vue"),
+    children: [
+      {
+        path: "/auth/signUp",
+        name: "auth.signUp",
+        component: () => import("../views/AuthSignUp.vue"),
+      },
+      {
+        path: "/auth/signIn",
+        name: "auth.signIn",
+        component: () => import("../views/AuthSignIn.vue"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

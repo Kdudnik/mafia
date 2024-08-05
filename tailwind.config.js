@@ -38,6 +38,7 @@ export default {
         }
       },
       fontSize: {
+        auth: "72px",
         "title-h1": [
           "var(--font-size-title-h1)",
           {
@@ -80,11 +81,13 @@ export default {
         "pos-light": "0 40%",
       },
       backgroundImage: {
-        "dark": "url(/images/hero/bg-dark.jpg)",
-        "light": "url(/images/hero/bg-white.jpg)",
+        "hero-dark": "url(/images/hero/bg-dark.jpg)",
+        "hero-light": "url(/images/hero/bg-white.jpg)",
+        "auth-dark": "url(/images/auth/bg-dark.jpg)",
+        "auth-light": "url(/images/auth/bg-light.webp)"
       },
       height: {
-        hero: "calc(100vh - 80px)",
+        "maf-screen": "calc(100vh - 80px)",
       },
     },
   },

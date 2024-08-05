@@ -18,37 +18,31 @@ function switchLanguage() {
 <template>
   <header class="sticky top-0 z-50 flex justify-center h-20 w-full">
     <nav class="container flex grow items-center justify-between py-3">
-      <router-link
-        to="/"
-        class="basis-12 hover:scale-110 duration-200"
-      >
-        <img
-          src="/images/navbar/logo.png"
-          alt=""
-        >
+      <router-link to="/" class="basis-12 hover:scale-110 duration-200">
+        <img src="/images/navbar/logo.png" alt="" />
       </router-link>
       <ul class="flex gap-8 text-2xl font-semibold">
         <button class="group flex flex-wrap relative">
           <router-link to="/">
             <li
-              class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light"
+              class="duration-200 text-gray-dark group-hover:text-gray-semi-dark dark:text-white dark:group-hover:text-white-dark"
             >
               {{ $t("navbar.home") }}
             </li>
             <div
-              class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"
+              class="h-0.5 w-0 absolute bottom-0 bg-gray-semi-dark dark:bg-white rounded-md duration-200 group-hover:w-full"
             />
           </router-link>
         </button>
         <button class="group flex flex-wrap relative">
-          <router-link :to="{name: 'docs.rules', hash: '#rules'}">
+          <router-link :to="{ name: 'docs.rules', hash: '#rules' }">
             <li
-              class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light"
+              class="duration-200 text-gray-dark group-hover:text-gray-semi-dark dark:text-white dark:group-hover:text-white-dark"
             >
               {{ $t("navbar.docs") }}
             </li>
             <div
-              class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"
+              class="h-0.5 w-0 absolute bottom-0 bg-gray-semi-dark dark:bg-white rounded-md duration-200 group-hover:w-full"
             />
           </router-link>
         </button>
@@ -68,22 +62,14 @@ function switchLanguage() {
           class="group duration-200 hover:scale-110"
           @click="switchTheme()"
         >
-          <svg
-            class="dark:hidden"
-            width="26"
-            height="26"
-          >
+          <svg class="dark:hidden" width="26" height="26">
             <path
               class="fill-gray-dark text-gray group-hover:fill-gray"
               fill-rule="evenodd"
               d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
             />
           </svg>
-          <svg
-            class="hidden dark:inline"
-            width="26"
-            height="26"
-          >
+          <svg class="hidden dark:inline" width="26" height="26">
             <path
               class="dark:fill-white dark:group-hover:fill-gray"
               fill-rule="evenodd"
@@ -92,7 +78,7 @@ function switchLanguage() {
           </svg>
         </button>
         <button
-          class="w-10 h-6 rounded-sm overflow-hidden dark:brightness-50 duration-200 hover:scale-110 dark:hover:brightness-75"
+          class="w-10 h-6 rounded-sm overflow-hidden dark:brightness-75 duration-200 hover:scale-110 dark:hover:brightness-75"
           @click="switchLanguage"
         >
           <img
@@ -101,6 +87,12 @@ function switchLanguage() {
             alt=""
           >
         </button>
+        <router-link
+          to="/auth/signUp"
+          class="btn btn-transparent"
+        >
+          {{ $t("navbar.signUp") }}
+        </router-link>
       </div>
     </nav>
   </header>
@@ -111,8 +103,8 @@ function switchLanguage() {
 
 @layer utilities {
   .active-page > li {
-    @apply text-gray-light;
-    @apply dark:text-gray-light;
+    @apply text-gray-semi-dark;
+    @apply dark:text-white-dark;
   }
 
   .active-page > div {
