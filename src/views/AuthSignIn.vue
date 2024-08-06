@@ -1,38 +1,38 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
-import { useLogin } from "../composables/useLogin";
+import { useAuth } from "../supabase/useAuth";
+import { useValidate } from "../composables/useValidate";
 
 const router = useRouter();
 
 const userEmail = ref("");
 const userPassword = ref("");
 
-const loginResult = ref()
+const fieldsState = ref([])
 
 const onLogin = async (userEmail, userPassword) => {
-  const { data } = await useLogin(userEmail, userPassword)
-  console.log( data );
+  const { validateEmail, validatePassword } = useValidate()
+  const emailFieldState = validateEmail(userEmail, userPassword)
+  const passwordFieldState = validatePassword(userEmail, userPassword)
 
-  if (data.user) router.push({ name: "home" })
+  if (!emailFieldState.isValid || !passwordFieldState.isValid) {
+    fieldsState.value = [emailFieldState, passwordFieldState]
+    return
+  }
 
-  loginResult.value = data
+  const { authSignIn } = useAuth()
+  const { error } = await authSignIn(userEmail, userPassword)
+
+  if (!error) router.push({ name: "hero" })
 }
 
 const emailIsValid = computed(() => {
-  if (!!loginResult.value) {
-    return !!loginResult.value.errors.find(e => e.field === "email") ? false : true
-  }
-
-  return true
+  return !!fieldsState.value.find(e => e.field === "email") ? false : true
 })
 
 const passwordIsValid = computed(() => {
-  if (!!loginResult.value) {
-    return !!loginResult.value.errors.find(e => e.field === "password") ? false : true
-  }
-
-  return true
+  return !!fieldsState.value.find(e => e.field === "password") ? false : true
 })
 </script>
 
@@ -47,15 +47,15 @@ const passwordIsValid = computed(() => {
         <div class="flex flex-col gap-2">
           <input
             v-model="userEmail"
-            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white dark:border-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
-            :class="{ 'dark:border-red-600': !emailIsValid }"
+            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
+            :class="[ !emailIsValid ? 'dark:border-red-600' : 'dark:border-white']"
             type="email"
             :placeholder="$t('auth.fields.email')"
           >
 
           <template v-if="!emailIsValid">
             <span class="text-red-600">
-              {{ $t(`${loginResult.errors.find(e => e.field === "email").message}`) }}
+              {{ $t(`${fieldsState.find(e => e.field === "email").message}`) }}
             </span>
           </template>
         </div>
@@ -63,15 +63,15 @@ const passwordIsValid = computed(() => {
         <div class="flex flex-col gap-2">
           <input
             v-model="userPassword"
-            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white dark:border-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
-            :class="{ 'dark:border-red-600': !passwordIsValid }"
+            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
+            :class="[ !passwordIsValid ? 'dark:border-red-600' : 'dark:border-white']"
             type="password"
             :placeholder="$t('auth.fields.password')"
           >
 
           <template v-if="!passwordIsValid">
             <span class="text-red-600">
-              {{ $t(`${loginResult.errors.find(e => e.field === "password").message}`) }}
+              {{ $t(`${fieldsState.find(e => e.field === "password").message}`) }}
             </span>
           </template>
         </div>

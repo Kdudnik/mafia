@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.44.4",
+    "pinia": "^2.2.1",
     "tailwindcss-animated": "^1.1.2",
     "vue": "^3.4.31",
     "vue-i18n": "9",
