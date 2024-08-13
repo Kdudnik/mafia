@@ -3,6 +3,7 @@ import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { useAuth } from "../supabase/useAuth";
 import { useValidate } from "../composables/useValidate";
+import { useUser } from "../stores/useUser";
 
 const router = useRouter();
 
@@ -57,7 +58,7 @@ const usernameIsValid = computed(() => {
 <template>
   <form
     novalidate
-    class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl bg-opacity-50 border-gray-dark bg-gray-dark dark:border-white dark:bg-white dark:bg-opacity-30 dark:bg-opacity-30"
+    class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl bg-opacity-50 border-gray-dark bg-gray-dark dark:border-white dark:bg-white dark:bg-opacity-30"
     @submit.prevent="onSignUp(userEmail, userPassword, userName)"
   >
     <div class="mt-12">

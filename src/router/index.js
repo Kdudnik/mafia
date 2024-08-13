@@ -6,7 +6,7 @@ import { useAuth } from "../supabase/useAuth";
 const { authGetSession } = useAuth()
 
 // TODO: Remove after developing
-let { error } = await supabase.auth.signOut()
+// let { error } = await supabase.auth.signOut()
 
 const routes = [
   { path: "/", name: "hero", component: HeroView },

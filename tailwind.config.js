@@ -37,6 +37,7 @@ export default {
           dark: "#d5d5d5"
         },
         error: "#ff7373",
+        header: "rbga(0,0,0,0.1)"
       },
       fontSize: {
         auth: "72px",

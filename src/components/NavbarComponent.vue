@@ -2,6 +2,8 @@
 import { useI18n } from "vue-i18n";
 import { useUser } from "../stores/useUser";
 
+const store = useUser()
+
 const { locale, availableLocales } = useI18n();
 
 function switchTheme() {
@@ -17,7 +19,7 @@ function switchLanguage() {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 flex justify-center h-20 w-full">
+  <header class="sticky top-0 z-50 flex justify-center h-20 w-full bg-header">
     <nav class="container flex grow items-center justify-between py-3">
       <router-link to="/" class="basis-12 hover:scale-110 duration-200">
         <img src="/images/navbar/logo.png" alt="" />
@@ -61,6 +63,19 @@ function switchLanguage() {
         </button>
       </ul>
       <div class="flex gap-8 items-center">
+        <router-link v-if="!store.userAuthorized" to="/auth/signUp" class="btn btn-transparent">
+          {{ $t("navbar.signUp") }}
+        </router-link>
+        <button
+          class="w-10 h-6 rounded-sm overflow-hidden dark:brightness-75 duration-200 hover:scale-110 dark:hover:brightness-75"
+          @click="switchLanguage"
+        >
+          <img
+            class="h-full w-full"
+            :src="`/images/navbar/${$i18n.locale}.png`"
+            alt=""
+          />
+        </button>
         <button
           class="group duration-200 hover:scale-110"
           @click="switchTheme()"
@@ -80,19 +95,9 @@ function switchLanguage() {
             />
           </svg>
         </button>
-        <button
-          class="w-10 h-6 rounded-sm overflow-hidden dark:brightness-75 duration-200 hover:scale-110 dark:hover:brightness-75"
-          @click="switchLanguage"
-        >
-          <img
-            class="h-full w-full"
-            :src="`/images/navbar/${$i18n.locale}.png`"
-            alt=""
-          />
-        </button>
-        <router-link to="/auth/signUp" class="btn btn-transparent">
-          {{ $t("navbar.signUp") }}
-        </router-link>
+        <span>
+          Hi, {{ store.username }}!
+        </span>
       </div>
     </nav>
   </header>

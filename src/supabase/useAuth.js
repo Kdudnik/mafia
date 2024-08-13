@@ -24,7 +24,6 @@ const useAuth = function () {
 
   const authGetSession = async function () {
     const localSession = await supabase.auth.getSession();
-    console.log(localSession.data.session);
     return localSession.data.session
   };
 
