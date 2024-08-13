@@ -137,7 +137,7 @@
   ],
   "auth": {
     "fields": {
-        "name": "Displayed Name",
+        "username": "Displayed Name",
         "email": "Email",
         "password": "Password"
     },
@@ -157,7 +157,9 @@
       "longEmail": "Your email is too long",
       "noPassword": "Password is required",
       "shortPassword": "Password must be at least 8 symbols",
-      "longPassword": "Password can't be logner than 254 symbols"
+      "longPassword": "Your password is too long",
+      "noUsername": "Username is required",
+      "longUsername": "Your username is too long"
     }
   }
 }

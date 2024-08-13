@@ -35,7 +35,8 @@ export default {
         white: {
           DEFAULT: "#ffffff",
           dark: "#d5d5d5"
-        }
+        },
+        error: "#ff7373",
       },
       fontSize: {
         auth: "72px",

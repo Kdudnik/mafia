@@ -49,8 +49,30 @@ export function useValidate() {
     return state
   };
 
+  const validateUsername = (username) => {
+    const state = {
+      field: 'username',
+      isValid: false,
+      message: ''
+    }
+
+    if(!username) {
+      state.message = 'auth.error.noUsername'
+      return state
+    }
+
+    if (username.length > 18) {
+      state.message = 'auth.error.longUsername'
+      return state
+    }
+
+    state.isValid = true
+    return state
+  }
+
   return {
     validateEmail,
-    validatePassword
+    validatePassword,
+    validateUsername
   }
 }

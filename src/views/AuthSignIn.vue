@@ -9,38 +9,46 @@ const router = useRouter();
 const userEmail = ref("");
 const userPassword = ref("");
 
-const fieldsState = ref([])
+const fieldsState = ref([]);
 
-const onLogin = async (userEmail, userPassword) => {
-  const { validateEmail, validatePassword } = useValidate()
-  const emailFieldState = validateEmail(userEmail, userPassword)
-  const passwordFieldState = validatePassword(userEmail, userPassword)
+const supabaseErrorMessage = ref();
 
-  if (!emailFieldState.isValid || !passwordFieldState.isValid) {
-    fieldsState.value = [emailFieldState, passwordFieldState]
-    return
+const onSignIn = async (userEmail, userPassword) => {
+  const { validateEmail, validatePassword } = useValidate();
+  const emailFieldState = validateEmail(userEmail);
+  const passwordFieldState = validatePassword(userPassword);
+
+  fieldsState.value = [emailFieldState, passwordFieldState];
+  if (!emailFieldState.isValid || !passwordFieldState.isValid) return;
+
+  const { authSignIn } = useAuth();
+  const { data, error } = await authSignIn(userEmail, userPassword);
+
+  if (error) {
+    supabaseErrorMessage.value = error.message;
+  } else {
+    router.push({ name: "hero" });
   }
-
-  const { authSignIn } = useAuth()
-  const { error } = await authSignIn(userEmail, userPassword)
-
-  if (!error) router.push({ name: "hero" })
-}
+};
 
 const emailIsValid = computed(() => {
-  return !!fieldsState.value.find(e => e.field === "email") ? false : true
-})
+  const emailField = fieldsState.value.find((e) => e.field === "email");
+  if (!!emailField) return emailField.isValid;
+  else return !!emailField ? false : true;
+});
 
 const passwordIsValid = computed(() => {
-  return !!fieldsState.value.find(e => e.field === "password") ? false : true
-})
+  const passwordField = fieldsState.value.find((e) => e.field === "password");
+  if (!!passwordField) return passwordField.isValid;
+  else return !!passwordField ? false : true;
+});
 </script>
 
 <template>
   <form
     novalidate
     class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl bg-opacity-50 border-gray-dark bg-gray-dark dark:border-white dark:bg-white dark:bg-opacity-30 dark:bg-opacity-30"
-    @submit.prevent="onLogin(userEmail, userPassword)"
+    @submit.prevent="onSignIn(userEmail, userPassword)"
   >
     <div class="mt-12">
       <div class="flex flex-col basis-full gap-8">
@@ -48,14 +56,18 @@ const passwordIsValid = computed(() => {
           <input
             v-model="userEmail"
             class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
-            :class="[ !emailIsValid ? 'dark:border-red-600' : 'dark:border-white']"
+            :class="[
+              !emailIsValid ? 'dark:border-error' : 'dark:border-white',
+            ]"
             type="email"
             :placeholder="$t('auth.fields.email')"
           >
 
           <template v-if="!emailIsValid">
-            <span class="text-red-600">
-              {{ $t(`${fieldsState.find(e => e.field === "email").message}`) }}
+            <span class="text-error">
+              {{
+                $t(`${fieldsState.find((e) => e.field === "email").message}`)
+              }}
             </span>
           </template>
         </div>
@@ -64,14 +76,18 @@ const passwordIsValid = computed(() => {
           <input
             v-model="userPassword"
             class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
-            :class="[ !passwordIsValid ? 'dark:border-red-600' : 'dark:border-white']"
+            :class="[
+              !passwordIsValid ? 'dark:border-error' : 'dark:border-white',
+            ]"
             type="password"
             :placeholder="$t('auth.fields.password')"
           >
 
           <template v-if="!passwordIsValid">
-            <span class="text-red-600">
-              {{ $t(`${fieldsState.find(e => e.field === "password").message}`) }}
+            <span class="text-error">
+              {{
+                $t(`${fieldsState.find((e) => e.field === "password").message}`)
+              }}
             </span>
           </template>
         </div>
@@ -82,12 +98,12 @@ const passwordIsValid = computed(() => {
           class="btn grow w-auto cursor-pointer"
         >
       </div>
+      <div class="text-error mt-4" v-if="supabaseErrorMessage">
+        {{ supabaseErrorMessage }}
+      </div>
       <div class="text-sm mt-4">
         {{ $t("auth.signIn.linkText") }}
-        <router-link
-          to="/auth/signUp"
-          class="duration-150 hover:text-yellow"
-        >
+        <router-link to="/auth/signUp" class="duration-150 hover:text-yellow">
           {{ $t("auth.signIn.link") }}
         </router-link>
       </div>

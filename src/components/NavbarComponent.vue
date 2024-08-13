@@ -1,5 +1,6 @@
 <script setup>
 import { useI18n } from "vue-i18n";
+import { useUser } from "../stores/useUser";
 
 const { locale, availableLocales } = useI18n();
 
@@ -46,16 +47,18 @@ function switchLanguage() {
             />
           </router-link>
         </button>
-        <!-- <button class="group flex flex-wrap relative">
-                    <router-link to="/generation">
-                        <li
-                            class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light">
-                            {{ $t("navbar.generation") }}
-                        </li>
-                        <div class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full">
-                        </div>
-                    </router-link>
-                </button> -->
+        <button class="group flex flex-wrap relative">
+          <router-link to="/generation">
+            <li
+              class="duration-200 text-gray-dark group-hover:text-gray-light dark:text-gray dark:group-hover:text-gray-light"
+            >
+              {{ $t("navbar.generation") }}
+            </li>
+            <div
+              class="h-0.5 w-0 absolute bottom-0 bg-gray rounded-md duration-200 group-hover:w-full"
+            />
+          </router-link>
+        </button>
       </ul>
       <div class="flex gap-8 items-center">
         <button
@@ -85,12 +88,9 @@ function switchLanguage() {
             class="h-full w-full"
             :src="`/images/navbar/${$i18n.locale}.png`"
             alt=""
-          >
+          />
         </button>
-        <router-link
-          to="/auth/signUp"
-          class="btn btn-transparent"
-        >
+        <router-link to="/auth/signUp" class="btn btn-transparent">
           {{ $t("navbar.signUp") }}
         </router-link>
       </div>
