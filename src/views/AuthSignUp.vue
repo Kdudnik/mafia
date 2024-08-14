@@ -71,7 +71,7 @@ const usernameIsValid = computed(() => {
         <div class="flex flex-col gap-2">
           <input
             v-model="userName"
-            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
+            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
             :class="[
               !usernameIsValid ? 'border-error' : 'border-gray-dark dark:border-white',
             ]"
@@ -91,7 +91,7 @@ const usernameIsValid = computed(() => {
         <div class="flex flex-col gap-2">
           <input
             v-model="userEmail"
-            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
+            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
             :class="[
               !emailIsValid ? 'border-error' : 'border-gray-dark dark:border-white',
             ]"
@@ -111,7 +111,7 @@ const usernameIsValid = computed(() => {
         <div class="flex flex-col gap-2">
           <input
             v-model="userPassword"
-            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
+            class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
             :class="[
               !passwordIsValid ? 'border-error' : 'border-gray-dark dark:border-white',
             ]"
