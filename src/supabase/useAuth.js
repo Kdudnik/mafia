@@ -22,6 +22,11 @@ const useAuth = function () {
     return signInResponse;
   };
 
+  const authLogOut = async function () {
+    let { error } = await supabase.auth.signOut()
+    if(error) alert(error)
+  }
+
   const authGetSession = async function () {
     const localSession = await supabase.auth.getSession();
     return localSession.data.session
@@ -31,6 +36,7 @@ const useAuth = function () {
     authSignUp,
     authSignIn,
     authGetSession,
+    authLogOut
   };
 };
 

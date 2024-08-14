@@ -4,6 +4,7 @@ import { useRouter } from "vue-router";
 import { useAuth } from "../supabase/useAuth";
 import { useValidate } from "../composables/useValidate";
 import { useUser } from "../stores/useUser";
+import { useUserTable } from "../composables/useUserTable";
 
 const router = useRouter();
 
@@ -27,11 +28,15 @@ const onSignUp = async (userEmail, userPassword, userName) => {
   const { authSignUp } = useAuth();
   const { data, error } = await authSignUp(userEmail, userPassword, userName);
 
-  console.log(data)
-
   if (error) {
     supabaseErrorMessage.value = error.message;
   } else {
+    const { user } = useUser()
+    user.authorized = true
+    user.id = data.user.id
+    user.name = data.user.user_metadata.name
+    const { userTableCreate } = useUserTable()
+    userTableCreate(user)
     router.push({ name: "hero" });
   }
 };
@@ -68,7 +73,7 @@ const usernameIsValid = computed(() => {
             v-model="userName"
             class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
             :class="[
-              !usernameIsValid ? 'dark:border-error' : 'dark:border-white',
+              !usernameIsValid ? 'border-error' : 'border-gray-dark dark:border-white',
             ]"
             type="username"
             :placeholder="$t('auth.fields.username')"
@@ -88,7 +93,7 @@ const usernameIsValid = computed(() => {
             v-model="userEmail"
             class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
             :class="[
-              !emailIsValid ? 'dark:border-error' : 'dark:border-white',
+              !emailIsValid ? 'border-error' : 'border-gray-dark dark:border-white',
             ]"
             type="email"
             :placeholder="$t('auth.fields.email')"
@@ -108,7 +113,7 @@ const usernameIsValid = computed(() => {
             v-model="userPassword"
             class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
             :class="[
-              !passwordIsValid ? 'dark:border-error' : 'dark:border-white',
+              !passwordIsValid ? 'border-error' : 'border-gray-dark dark:border-white',
             ]"
             type="password"
             :placeholder="$t('auth.fields.password')"

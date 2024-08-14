@@ -3,7 +3,8 @@
     "home": "Home",
     "docs": "Docs",
     "generation": "Generation",
-    "signUp": "Sign Up"
+    "signIn": "Sign In",
+    "logOut": "Log Out"
   },
   "hero": {
     "subtitles": [

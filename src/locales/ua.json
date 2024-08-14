@@ -3,7 +3,8 @@
     "home": "Головна",
     "docs": "Дока",
     "generation": "Генерація",
-    "signUp": "Реєстрація"
+    "signIn": "Увійти",
+    "logOut": "Вийти"
   },
   "hero": {
     "subtitles": [

@@ -28,10 +28,10 @@ const onSignIn = async (userEmail, userPassword) => {
   if (error) {
     supabaseErrorMessage.value = error.message;
   } else {
-    let { userAuthorized, userId, username } = useUser()
-    userAuthorized = true
-    userId = data.user.id
-    username = data.user.user_metadata.name
+    const { user } = useUser()
+    user.authorized = true
+    user.id = data.user.id
+    user.name = data.user.user_metadata.name
     router.push({ name: "hero" });
   }
 };
@@ -52,7 +52,7 @@ const passwordIsValid = computed(() => {
 <template>
   <form
     novalidate
-    class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl bg-opacity-50 border-gray-dark bg-gray-dark dark:border-white dark:bg-white dark:bg-opacity-30"
+    class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl bg-opacity-50 border-gray-dark bg-gray-light dark:border-white dark:bg-white dark:bg-opacity-30"
     @submit.prevent="onSignIn(userEmail, userPassword)"
   >
     <div class="mt-12">
@@ -62,7 +62,7 @@ const passwordIsValid = computed(() => {
             v-model="userEmail"
             class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
             :class="[
-              !emailIsValid ? 'dark:border-error' : 'dark:border-white',
+              !emailIsValid ? 'border-error' : 'border-gray-dark dark:border-white',
             ]"
             type="email"
             :placeholder="$t('auth.fields.email')"
@@ -82,7 +82,7 @@ const passwordIsValid = computed(() => {
             v-model="userPassword"
             class="py-3 px-5 rounded-md bg-transparent border-2 border-solid duration-150 border-gray-dark text-gray-dark dark:text-white focus-visible:border-gray-light dark:focus-visible:border-gray-light"
             :class="[
-              !passwordIsValid ? 'dark:border-error' : 'dark:border-white',
+              !passwordIsValid ? 'border-error' : 'border-gray-dark dark:border-white',
             ]"
             type="password"
             :placeholder="$t('auth.fields.password')"

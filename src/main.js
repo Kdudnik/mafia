@@ -27,9 +27,9 @@ const pinia = createPinia();
 createApp(App).use(pinia).use(router).use(locales).mount("#app");
 
 if (await authGetSession()) {
-  const { user } = await authGetSession();
-  let store = useUser();
-  store.userAuthorized = true;
-  store.userId = user.id;
-  store.username = user.user_metadata.name;
+  const { user: userSession } = await authGetSession();
+  const { user } = useUser();
+  user.authorized = true;
+  user.id = userSession.id;
+  user.name = userSession.user_metadata.name;
 }

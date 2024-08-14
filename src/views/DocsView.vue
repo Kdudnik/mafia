@@ -7,8 +7,6 @@ import NavbarComponent from "../components/NavbarComponent.vue";
 import dataJSON from "../../data/data.json";
 
 const { params } = useRoute()
-console.log( params );
-
 
 const data = ref(dataJSON);
 </script>

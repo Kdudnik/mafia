@@ -86,7 +86,7 @@ export default {
         "hero-dark": "url(/images/hero/bg-dark.jpg)",
         "hero-light": "url(/images/hero/bg-white.jpg)",
         "auth-dark": "url(/images/auth/bg-dark.jpg)",
-        "auth-light": "url(/images/auth/bg-light.webp)"
+        "auth-light": "url(/images/auth/bg-light.jpg)"
       },
       height: {
         "maf-screen": "calc(100vh - 80px)",

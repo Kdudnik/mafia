@@ -4,7 +4,7 @@ import NavbarComponent from "../components/NavbarComponent.vue";
 
 <template>
   <div
-    class="absolute h-full w-full -z-50 bg-pos-light bg-no-repeat bg-auth-light dark:bg-auth-dark dark:brightness-75"
+    class="absolute h-full w-full -z-50 bg-pos-light bg-cover bg-no-repeat bg-auth-light dark:bg-auth-dark dark:brightness-75"
   />
   <NavbarComponent />
   <section class="container flex items-center h-maf-screen pl-32">
