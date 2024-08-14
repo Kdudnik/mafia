@@ -83,10 +83,10 @@ export default {
         "pos-light": "0 40%",
       },
       backgroundImage: {
-        "hero-dark": "url(/images/hero/bg-dark.jpg)",
-        "hero-light": "url(/images/hero/bg-white.jpg)",
-        "auth-dark": "url(/images/auth/bg-dark.jpg)",
-        "auth-light": "url(/images/auth/bg-light.jpg)"
+        "hero-dark": "url(/images/hero/bg-dark.webp)",
+        "hero-light": "url(/images/hero/bg-white.webp)",
+        "auth-dark": "url(/images/auth/bg-dark.webp)",
+        "auth-light": "url(/images/auth/bg-light.webp)"
       },
       height: {
         "maf-screen": "calc(100vh - 80px)",

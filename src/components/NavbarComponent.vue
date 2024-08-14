@@ -33,7 +33,7 @@ function switchLanguage() {
   <header class="sticky top-0 z-50 flex justify-center h-20 w-full bg-header">
     <nav class="container flex grow items-center justify-between py-3">
       <router-link to="/" class="basis-12 hover:scale-110 duration-200">
-        <img src="/images/navbar/logo.png" alt="" />
+        <img src="/images/navbar/logo.webp" alt="" />
       </router-link>
       <ul class="flex gap-8 text-2xl font-semibold">
         <button class="group flex flex-wrap relative">

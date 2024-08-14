@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => {
       'process.env.SERVICE_KEY': JSON.stringify(env.SERVICE_KEY)
     },
     plugins: [vue()],
+    build: {
+      target: "esnext"
+    }
   }
 })
 
