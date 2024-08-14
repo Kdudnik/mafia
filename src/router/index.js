@@ -1,5 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HeroView from "../views/HeroView.vue";
+import { supabase } from "../lib/supabase";
+import { useAuth } from "../supabase/useAuth";
+
+const { authGetSession } = useAuth()
+
+// TODO: Remove after developing
 
 const routes = [
   { path: "/", name: "hero", component: HeroView },
@@ -25,6 +31,23 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/auth",
+    name: "auth",
+    component: () => import("../views/AuthPage.vue"),
+    children: [
+      {
+        path: "/auth/signUp",
+        name: "auth.signUp",
+        component: () => import("../views/AuthSignUp.vue"),
+      },
+      {
+        path: "/auth/signIn",
+        name: "auth.signIn",
+        component: () => import("../views/AuthSignIn.vue"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({
@@ -40,5 +63,12 @@ const router = createRouter({
     }
   },
 });
+
+router.beforeEach(async (to, from, next) => {
+  if(to.meta.requiresAuth && !await authGetSession()) next("/auth/signIn")
+  else {
+    next()
+  }
+})
 
 export default router;

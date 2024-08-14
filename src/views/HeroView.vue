@@ -1,20 +1,20 @@
 <script setup>
-import FooterBar from "../components/FooterComponent.vue";
-import NavBar from "../components/NavbarComponent.vue";
+import FooterComponent from "../components/FooterComponent.vue";
+import NavbarComponent from "../components/NavbarComponent.vue";
 </script>
 
 <template>
   <div
-    class="absolute h-full w-full -z-50 bg-pos-light bg-no-repeat bg-light dark:bg-pos-dark dark:bg-dark dark:bg-cover"
+    class="absolute h-full w-full -z-50 bg-pos-light bg-no-repeat bg-hero-light dark:bg-pos-dark dark:bg-hero-dark dark:bg-cover"
   />
-  <NavBar />
-  <section class="flex h-hero">
+  <NavbarComponent />
+  <section class="flex h-maf-screen">
     <div class="container flex flex-col justify-center">
       <h1 class="text-yellow-light dark:text-yellow animate-fade-down">
         Mafia Assistant
       </h1>
       <div
-        class="flex flex-col text-lg mt-6 font-semibold leading-8 animate-fade-down animate-delay-150 text-gray-dark dark:text-white-dark"
+        class="flex flex-col text-lg mt-6 font-semibold leading-8 animate-fade-down animate-delay-150"
       >
         <span v-for="(subtitle, index) in $tm('hero.subtitles')" :key="index">
           {{ subtitle }}
@@ -47,7 +47,7 @@ import NavBar from "../components/NavbarComponent.vue";
         </div>
       </router-link>
     </div>
-    <FooterBar />
+    <FooterComponent />
   </section>
 </template>
 
