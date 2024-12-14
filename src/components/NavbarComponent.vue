@@ -60,6 +60,18 @@ function switchLanguage() {
             />
           </router-link>
         </button>
+        <button class="group flex flex-wrap relative">
+          <router-link to="/stats" v-if="userStore.user.authorized">
+            <li
+              class="duration-200 text-gray-dark group-hover:text-gray-semi-dark dark:text-white dark:group-hover:text-white-dark"
+            >
+              {{ $t("navbar.stats") }}
+            </li>
+            <div
+              class="h-0.5 w-0 absolute bottom-0 bg-gray-semi-dark dark:bg-white rounded-md duration-200 group-hover:w-full"
+            />
+          </router-link>
+        </button>
       </ul>
       <div class="flex gap-4 items-center">
         <router-link
@@ -77,23 +89,23 @@ function switchLanguage() {
           {{ $t("navbar.logOut") }}
         </button>
         <button
-          class="btn btn-transparent p-2 rounded-xl text-lg leading-4"
+          class="btn btn-transparent p-2 text-sm leading-4 w-12 h-12"
           @click="switchLanguage"
         >
           {{ ($i18n.locale).toUpperCase() }}
         </button>
         <button
-          class="btn btn-transparent p-2 rounded-xl"
+          class="btn btn-transparent p-2 w-12 h-12"
           @click="switchTheme()"
         >
-          <svg viewBox="0 0 26 26" class="dark:hidden" width="16" height="16">
+          <svg viewBox="0 0 26 26" class="dark:hidden" width="18" height="18">
             <path
               class="fill-gray-dark"
               fill-rule="evenodd"
               d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
             />
           </svg>
-          <svg viewBox="0 0 26 26" class="hidden dark:inline" width="16" height="16">
+          <svg viewBox="0 0 26 26" class="hidden dark:inline" width="18" height="18">
             <path
               class="dark:fill-white"
               fill-rule="evenodd"

@@ -11,7 +11,7 @@ const useAuth = function () {
         },
       },
     });
-    return signUpResponse
+    return signUpResponse;
   };
 
   const authSignIn = async function (userEmail, userPassword) {
@@ -23,20 +23,22 @@ const useAuth = function () {
   };
 
   const authLogOut = async function () {
-    let { error } = await supabase.auth.signOut()
-    if(error) alert(error)
-  }
+    let { error } = await supabase.auth.signOut();
+    if (error) alert(error);
+  };
 
-  const authGetSession = async function () {
-    const localSession = await supabase.auth.getSession();
-    return localSession.data.session
+  const authGetUser = async function () {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    return user;
   };
 
   return {
     authSignUp,
     authSignIn,
-    authGetSession,
-    authLogOut
+    authLogOut,
+    authGetUser,
   };
 };
 
