@@ -2,7 +2,7 @@
   "navbar": {
     "home": "Home",
     "docs": "Docs",
-    "generation": "Generation",
+    "stats": "Stats",
     "signIn": "Sign In",
     "logOut": "Log Out"
   },
@@ -162,5 +162,9 @@
       "noUsername": "Username is required",
       "longUsername": "Your username is too long"
     }
+  },
+  "stats": {
+    "title": "Welcome",
+    "allGamesTitle": "Games played:"
   }
 }
