@@ -1,11 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HeroView from "../views/HeroView.vue";
-import { supabase } from "../lib/supabase";
 import { useAuth } from "../supabase/useAuth";
+import { useUser } from "../stores/useUser";
+import { useSession } from "../composables/useSession"
 
-const { authGetSession } = useAuth()
-
-// TODO: Remove after developing
+const { authGetUser } = useAuth()
 
 const routes = [
   { path: "/", name: "hero", component: HeroView },
@@ -30,6 +29,12 @@ const routes = [
         component: () => import("../views/RolesView.vue"),
       },
     ],
+  },
+  {
+    path: "/stats",
+    name: "stats",
+    component: () => import("../views/StatsView.vue"),
+    meta: { requiresAuth: true }
   },
   {
     path: "/auth",
@@ -65,10 +70,31 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  if(to.meta.requiresAuth && !await authGetSession()) next("/auth/signIn")
+  const currentUser = await authGetUser()
+  if (currentUser) {
+    console.dir(currentUser)
+    const { setCurrentUser } = useUser();
+    setCurrentUser({
+      authorized: true,
+      id: currentUser.id,
+      name: currentUser.user_metadata.name,
+    });
+  }
+  else {
+    const { clearStore } = useUser()
+    clearStore()
+  }
+
+  if(to.meta.requiresAuth && !currentUser) {
+    next("/auth/signIn")
+  }
   else {
     next()
   }
 })
+
+const { checkExpiredSession } = useSession()
+
+checkExpiredSession()
 
 export default router;
