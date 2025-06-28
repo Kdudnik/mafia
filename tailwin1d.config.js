@@ -26,12 +26,6 @@ export default {
           DEFAULT: "#b98f21",
           light: "#d0a830"
         },
-        gray: {
-          DEFAULT: "#5e5e5e",
-          light: "#7a7a7a",
-          "semi-dark": "#373737",
-          dark: "#101010",
-        },
         white: {
           DEFAULT: "#ffffff",
           dark: "#d5d5d5"
