@@ -16,7 +16,10 @@ import NavbarComponent from "../components/NavbarComponent.vue";
       <div
         class="flex flex-col text-lg mt-6 font-semibold leading-8 animate-fade-down animate-delay-150"
       >
-        <span v-for="(subtitle, index) in $tm('hero.subtitles')" :key="index">
+        <span
+          v-for="(subtitle, index) in $tm('hero.subtitles')"
+          :key="index"
+        >
           {{ subtitle }}
         </span>
       </div>
