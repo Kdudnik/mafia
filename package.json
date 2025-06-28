@@ -14,7 +14,7 @@
     "@supabase/supabase-js": "^2.44.4",
     "@tailwindcss/postcss": "^4.1.11",
     "pinia": "^2.2.1",
-    "tailwindcss-animated": "^1.1.2",
+    "tailwindcss-animated": "^2.0.0",
     "vue": "^3.4.31",
     "vue-i18n": "9",
     "vue-router": "4"
