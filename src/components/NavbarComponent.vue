@@ -17,8 +17,13 @@ const onLogOut = () => {
   userStore.clearStore();
 };
 
+// user prefered theme init
+const userPreferedTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+document.documentElement.dataset.theme = "theme" in localStorage ? localStorage.getItem("theme") : userPreferedTheme
+
 function switchTheme() {
-  document.documentElement.classList.toggle("dark");
+  document.documentElement.dataset.theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+  window.localStorage.setItem("theme", document.documentElement.dataset.theme)
 }
 
 function switchLanguage() {
