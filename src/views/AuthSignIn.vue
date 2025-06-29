@@ -52,7 +52,7 @@ const passwordIsValid = computed(() => {
 <template>
   <form
     novalidate
-    class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl bg-opacity-50 border-gray-dark bg-gray-light dark:border-white dark:bg-white dark:bg-opacity-30"
+    class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl border-gray-dark bg-gray-light/50 dark:border-white dark:bg-white/30"
     @submit.prevent="onSignIn(userEmail, userPassword)"
   >
     <div class="mt-12">
