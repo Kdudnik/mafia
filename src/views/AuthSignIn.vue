@@ -4,6 +4,7 @@ import { useRouter } from "vue-router";
 import { useAuth } from "../supabase/useAuth";
 import { useValidate } from "../composables/useValidate";
 import { useUser } from "../stores/useUser";
+import { useUserTable } from "../composables/useUserTable";
 
 const router = useRouter();
 
@@ -29,6 +30,9 @@ const onSignIn = async (userEmail, userPassword) => {
     supabaseErrorMessage.value = error.message;
   } else {
     const { user } = useUser()
+    const { getRow } = useUserTable()
+    console.log(user.id, "user")
+    console.log(await getRow(user.id))
     user.authorized = true
     user.id = data.user.id
     user.name = data.user.user_metadata.name

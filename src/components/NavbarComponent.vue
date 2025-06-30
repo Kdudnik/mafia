@@ -11,7 +11,7 @@ const { authLogOut } = useAuth();
 const onLogOut = () => {
   const { error } = authLogOut();
   if (error) {
-    alert(error);
+    console.log(error);
     return;
   }
   userStore.clearStore();
