@@ -7,9 +7,9 @@ export const useUser = defineStore('user', () => {
     id: "",
     name: "",
     stats: {
-      totalGames: 0,
-      winrate: "",
-      favouriteRole: ""
+      totalGames: 22,
+      winrate: "50%",
+      favouriteRole: "Mafia"
     }
   })
 

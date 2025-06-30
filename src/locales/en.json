@@ -165,6 +165,9 @@
   },
   "stats": {
     "title": "Welcome",
-    "allGamesTitle": "Games played:"
+    "overall": "Overall",
+    "totalGames": "Games played:",
+    "winrate": "Winrate:",
+    "favouriteRole": "Favourite Role:"
   }
 }
