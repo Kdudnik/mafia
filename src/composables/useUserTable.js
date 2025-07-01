@@ -12,7 +12,6 @@ export function useUserTable() {
   };
 
   const getRow = async (userId) => {
-    console.log(userId, "userId")
     const { data, error } = await supabase
       .from("users-details")
       .select()

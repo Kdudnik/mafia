@@ -31,11 +31,16 @@ const onSignIn = async (userEmail, userPassword) => {
   } else {
     const { user } = useUser()
     const { getRow } = useUserTable()
-    console.log(user.id, "user")
-    console.log(await getRow(user.id))
+
     user.authorized = true
     user.id = data.user.id
     user.name = data.user.user_metadata.name
+
+    const userStats = await getRow(user.id)
+
+    user.stats.favouriteRole = userStats[0].favourite_role
+    user.stats.winrate = userStats[0].winrate + "%"
+    user.stats.totalGames = userStats[0].total_games
     router.push({ name: "hero" });
   }
 };
