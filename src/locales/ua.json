@@ -165,6 +165,9 @@
   },
   "stats": {
     "title": "Вітаємо",
-    "allGamesTitle": "Ігор зіграно:"
+    "overall": "Загально",
+    "totalGames": "Ігор зіграно:",
+    "winrate": "Відсоток перемог:",
+    "favouriteRole": "Улюблена роль:"
   }
 }

@@ -72,7 +72,6 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const currentUser = await authGetUser()
   if (currentUser) {
-    console.dir(currentUser)
     const { setCurrentUser } = useUser();
     setCurrentUser({
       authorized: true,

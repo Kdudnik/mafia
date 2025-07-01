@@ -10,6 +10,7 @@ import NavbarComponent from "../components/NavbarComponent.vue";
   <NavbarComponent />
   <section class="flex h-maf-screen">
     <div class="container flex flex-col justify-center">
+      <div class="test"></div>
       <h1 class="text-yellow-light dark:text-yellow animate-fade-down">
         Mafia Assistant
       </h1>

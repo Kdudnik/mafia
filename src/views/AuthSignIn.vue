@@ -4,6 +4,7 @@ import { useRouter } from "vue-router";
 import { useAuth } from "../supabase/useAuth";
 import { useValidate } from "../composables/useValidate";
 import { useUser } from "../stores/useUser";
+import { useUserTable } from "../composables/useUserTable";
 
 const router = useRouter();
 
@@ -29,9 +30,17 @@ const onSignIn = async (userEmail, userPassword) => {
     supabaseErrorMessage.value = error.message;
   } else {
     const { user } = useUser()
+    const { getRow } = useUserTable()
+
     user.authorized = true
     user.id = data.user.id
     user.name = data.user.user_metadata.name
+
+    const userStats = await getRow(user.id)
+
+    user.stats.favouriteRole = userStats[0].favourite_role
+    user.stats.winrate = userStats[0].winrate + "%"
+    user.stats.totalGames = userStats[0].total_games
     router.push({ name: "hero" });
   }
 };
@@ -52,7 +61,7 @@ const passwordIsValid = computed(() => {
 <template>
   <form
     novalidate
-    class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl bg-opacity-50 border-gray-dark bg-gray-light dark:border-white dark:bg-white dark:bg-opacity-30"
+    class="py-8 px-16 w-1/3 border-4 border-solid rounded-xl border-gray-dark bg-gray-light/50 dark:border-white dark:bg-white/30"
     @submit.prevent="onSignIn(userEmail, userPassword)"
   >
     <div class="mt-12">

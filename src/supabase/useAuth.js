@@ -24,7 +24,7 @@ const useAuth = function () {
 
   const authLogOut = async function () {
     let { error } = await supabase.auth.signOut();
-    if (error) alert(error);
+    if (error) console.log(error);
   };
 
   const authGetUser = async function () {

@@ -11,14 +11,19 @@ const { authLogOut } = useAuth();
 const onLogOut = () => {
   const { error } = authLogOut();
   if (error) {
-    alert(error);
+    console.log(error);
     return;
   }
   userStore.clearStore();
 };
 
+// user prefered theme init
+const userPreferedTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+document.documentElement.dataset.theme = "theme" in localStorage ? localStorage.getItem("theme") : userPreferedTheme
+
 function switchTheme() {
-  document.documentElement.classList.toggle("dark");
+  document.documentElement.dataset.theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+  window.localStorage.setItem("theme", document.documentElement.dataset.theme)
 }
 
 function switchLanguage() {
@@ -32,8 +37,14 @@ function switchLanguage() {
 <template>
   <header class="sticky top-0 z-50 flex justify-center h-20 w-full bg-header">
     <nav class="container flex grow items-center justify-between py-3">
-      <router-link to="/" class="basis-12 hover:scale-110 duration-200">
-        <img src="/images/navbar/logo.webp" alt="" />
+      <router-link
+        to="/"
+        class="basis-12 hover:scale-110 duration-200"
+      >
+        <img
+          src="/images/navbar/logo.webp"
+          alt=""
+        >
       </router-link>
       <ul class="flex gap-8 text-2xl font-semibold">
         <button class="group flex flex-wrap relative">
@@ -61,7 +72,10 @@ function switchLanguage() {
           </router-link>
         </button>
         <button class="group flex flex-wrap relative">
-          <router-link to="/stats" v-if="userStore.user.authorized">
+          <router-link
+            v-if="userStore.user.authorized"
+            to="/stats"
+          >
             <li
               class="duration-200 text-gray-dark group-hover:text-gray-semi-dark dark:text-white dark:group-hover:text-white-dark"
             >
@@ -82,9 +96,9 @@ function switchLanguage() {
           {{ $t("navbar.signIn") }}
         </router-link>
         <button
-          @click="onLogOut()"
           v-if="userStore.user.authorized"
           class="btn btn-transparent"
+          @click="onLogOut()"
         >
           {{ $t("navbar.logOut") }}
         </button>
@@ -98,14 +112,24 @@ function switchLanguage() {
           class="btn btn-transparent p-2 w-12 h-12"
           @click="switchTheme()"
         >
-          <svg viewBox="0 0 26 26" class="dark:hidden" width="18" height="18">
+          <svg
+            viewBox="0 0 26 26"
+            class="dark:hidden"
+            width="18"
+            height="18"
+          >
             <path
               class="fill-gray-dark"
               fill-rule="evenodd"
               d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
             />
           </svg>
-          <svg viewBox="0 0 26 26" class="hidden dark:inline" width="18" height="18">
+          <svg
+            viewBox="0 0 26 26"
+            class="hidden dark:inline"
+            width="18"
+            height="18"
+          >
             <path
               class="dark:fill-white"
               fill-rule="evenodd"
@@ -119,6 +143,7 @@ function switchLanguage() {
 </template>
 
 <style scoped>
+@reference "../css/style.css";
 @tailwind utilities;
 
 @layer utilities {
